@@ -16,6 +16,8 @@ Hay dos tipos:
 | `nltk` | Externa | Tokenizar, listas de palabras vacías, corpus de ejemplo |
 | `spacy` | Externa | Lematizar y etiquetar categorías gramaticales |
 
+Sigue en `cuadernos/conceptos_basicos.ipynb`, que creaste en el tema anterior. Añade al final una celda de texto con el título `## Bibliotecas` y una celda de código por cada prueba. Usa el mismo kernel o vuelve a ejecutar las celdas en orden si cambias de entorno.
+
 ## Cómo se incorporan
 
 Con `import`, al principio del código. Hay tres formas habituales:
@@ -30,52 +32,53 @@ import pandas as pd               # importa con un nombre corto (alias)
 
 Depende del kernel (ver el [tema 4](04-colab-en-vscode.md)):
 
-- **Kernel de Colab**: la mayoría ya vienen instaladas. Si falta alguna, se instala en una celda con `%pip install nombre`, pero **se pierde al cerrar la sesión** y hay que repetirlo cada vez.
-- **Kernel local**: se instala una vez con `%pip install nombre` en una celda (o `pip install nombre` en la terminal) y queda en tu ordenador.
+- **Kernel de Colab**: muchas bibliotecas ya vienen instaladas. Las que añadas con `%pip install nombre` estarán disponibles mientras conserves ese entorno de ejecución.
+- **Kernel local**: `%pip install nombre` en una celda instala la biblioteca en el entorno de Python que usa ese cuaderno.
 
 Instala solo bibliotecas conocidas y escribe bien el nombre: hay paquetes falsos con nombres casi idénticos a los de bibliotecas populares.
 
 ## Prueba 1: una biblioteca estándar
 
-Compara con el [ejemplo 5.8](05-conceptos-basicos-python.md#58-todo-junto-contar-palabras):
+Compara con el [ejemplo 5.8](05-conceptos-basicos-python.md#58-todo-junto-contar-palabras). Usamos el mismo texto y guardamos este recuento con otro nombre para poder comprobar que coinciden:
 
 ```python
 from collections import Counter
 texto = "el gato y el perro y el ratón"
-frecuencias = Counter(texto.split())
-print(frecuencias.most_common(2))
+frecuencias_counter = Counter(texto.split())
+print(frecuencias_counter.most_common(2))
+print(frecuencias_counter == frecuencias)
 ```
 
-**Predice:** ¿qué dos palabras aparecerán? Fíjate en que `Counter` hace en una línea lo que en el 5.8 necesitaba un bucle y una condición.
+**Predice:** ¿qué dos palabras aparecerán? Si ejecutaste el ejemplo 5.8 con el texto original, la segunda salida será `True`: ambos recuentos coinciden.
 
 ## Prueba 2: una biblioteca externa
 
-Con el **kernel local**, ejecuta:
+Con el kernel que estés usando, ejecuta:
 
 ```python
 import pandas as pd
 ```
 
-Si aparece `ModuleNotFoundError`, la biblioteca no está instalada. Instálala en una celda nueva y vuelve a ejecutar la anterior:
+Colab suele traer `pandas`. Si aparece `ModuleNotFoundError`, añade antes del `import` una celda con esta instrucción y ejecútala:
 
 ```python
 %pip install pandas
 ```
 
-Después muestra las frecuencias como tabla:
+Vuelve a ejecutar el `import` y después muestra las frecuencias como tabla:
 
 ```python
-tabla = pd.DataFrame(frecuencias.most_common(), columns=["palabra", "frecuencia"])
+tabla = pd.DataFrame(frecuencias_counter.most_common(), columns=["palabra", "frecuencia"])
 tabla
 ```
 
-Cambia al **kernel de Colab** y ejecuta `import pandas as pd`: funciona sin instalar nada, porque Colab ya la trae.
+Comprueba que la primera fila muestra `el` con frecuencia `3`. Ejecuta todo en orden, borra las salidas y guarda. Si estás en el navegador, descarga la versión actualizada y sustituye la copia de `cuadernos`. Haz commit con el mensaje `Comparo recuentos y añado la tabla de frecuencias` y sincroniza.
 
 ## Puntos de comprobación
 
 - [ ] Puedo explicar qué es una biblioteca y la diferencia entre estándar y externa.
 - [ ] Sé importar una biblioteca de las tres formas (`import`, `from … import`, `as`).
-- [ ] He instalado `pandas` en el kernel local y sé por qué en Colab no hacía falta.
+- [ ] He comprobado que ambos recuentos coinciden y he visto `el` con frecuencia `3` en la tabla de `pandas`.
 - [ ] Sé qué significa `ModuleNotFoundError` y cómo resolverlo.
 
 ---

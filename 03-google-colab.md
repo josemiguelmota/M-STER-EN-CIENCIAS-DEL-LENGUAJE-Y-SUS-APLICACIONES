@@ -11,7 +11,7 @@
 
 ## Pasos
 
-1. Entra en [colab.research.google.com](https://colab.research.google.com) con tu cuenta de Google y pulsa *Nuevo cuaderno*.
+1. Entra en [colab.research.google.com](https://colab.research.google.com) con tu cuenta de Google y pulsa *Nuevo cuaderno*. No necesitas importar archivos ni abrir un repositorio en Colab.
 2. Haz clic en el nombre (arriba a la izquierda) y cámbialo a `primer_cuaderno.ipynb`.
 3. En la primera celda de código escribe `print("Hola, lingüística")` y ejecútala. La primera vez tarda unos segundos: Colab te está asignando un ordenador.
 4. Pulsa *+ Texto* y escribe en Markdown un título (`# Mi primer cuaderno`) y una frase que explique para qué es.
@@ -28,9 +28,8 @@ len(frase)
 Ejecútalas en orden. Fíjate en que la segunda muestra el resultado sin `print`: en un cuaderno, la última línea de una celda se muestra sola.
 
 6. **El orden importa.** Ve a *Entorno de ejecución › Reiniciar sesión* y ejecuta **solo** la celda `len(frase)`. Aparece un error `NameError`: el ordenador de Google ha olvidado la variable. Ejecuta las celdas de arriba abajo y vuelve a funcionar.
-7. Si junto al error aparece un botón para que Gemini lo explique, pruébalo.
-8. Descarga el cuaderno: *Archivo › Descargar › Descargar .ipynb*. Muévelo a la carpeta `cuadernos` de tu repositorio.
-9. Haz commit con el mensaje `Primer cuaderno de Colab` y sincroniza. En la web de GitHub, abre el cuaderno: GitHub lo muestra con sus celdas y sus salidas.
+7. Después de comprobar el resultado, usa *Borrar todas las salidas*. Guarda y descarga el cuaderno: *Archivo › Descargar › Descargar .ipynb*. Muévelo a `laboratorio-textos/cuadernos/primer_cuaderno.ipynb`. La copia de Drive y la del repositorio son independientes: los cambios no pasan solos de una a otra.
+8. Haz commit con el mensaje `Primer cuaderno de Colab` y sincroniza. Abre `cuadernos/primer_cuaderno.ipynb` en tu repositorio privado de GitHub y comprueba que ves las celdas.
 
 ## Puntos de comprobación
 

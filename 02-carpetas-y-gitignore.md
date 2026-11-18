@@ -1,17 +1,17 @@
 # 2. Organizar el proyecto: carpetas y `.gitignore`
 
-**Qué es.** Un proyecto ordenado guarda cada tipo de archivo en su carpeta. Así sabes dónde está cada cosa y, sobre todo, puedes decidir con una sola regla qué carpetas no deben salir nunca de tu ordenador. Usaremos esta estructura:
+Abre el repositorio que creaste en el [tema 1](01-github-desktop-y-vscode.md). De momento solo necesitas el README. Ahora crearás esta estructura:
 
 ```text
-analisis-textos-python/
-├── .gitignore        lista de lo que NO se sube a GitHub
+laboratorio-textos/
+├── .gitignore        reglas para archivos que Git no debe incorporar
 ├── README.md         presentación del proyecto
 ├── cuadernos/        cuadernos de Colab (.ipynb)
 ├── datos/            textos que SÍ se pueden publicar
-└── datos_privados/   textos con datos personales: NUNCA se suben
+└── datos_privados/   carpeta local; en esta práctica solo contiene material ficticio
 ```
 
-El archivo **`.gitignore`** es un texto, en la carpeta principal del repositorio, con la lista de carpetas y archivos que Git debe **ignorar**: no los incluye en los commits y nunca los sube a GitHub. Siguen en tu ordenador; simplemente no salen de él. Se llama exactamente `.gitignore`: empieza por un punto y no lleva extensión.
+El archivo **`.gitignore`** indica a Git qué archivos sin seguimiento debe ignorar. No protege copias, salidas de cuadernos ni archivos que Git ya sigue. Se llama exactamente `.gitignore`: empieza por un punto y no lleva extensión.
 
 ## Pasos
 
@@ -34,7 +34,7 @@ ENTREVISTADORA: ¿Y cómo se hablaba en su casa?
 CARMEN RUIZ: Mi abuela Dolores decía mucho «quillo» y «miarma». Antonio todavía lo dice.
 ```
 
-4. Mira GitHub Desktop, pestaña *Changes*: aparecen los dos archivos. Si hicieras commit ahora, la entrevista se subiría a GitHub. **No lo hagas.**
+4. Mira GitHub Desktop, pestaña *Changes*: aparecen los dos archivos. **No hagas commit todavía.**
 5. En la carpeta principal del repositorio (no dentro de otra carpeta), crea un archivo llamado `.gitignore` y escribe:
 
 ```text
@@ -52,7 +52,7 @@ __pycache__/
 Thumbs.db
 ```
 
-6. Guarda (`Ctrl+S`) y vuelve a GitHub Desktop: **la entrevista ha desaparecido** de *Changes*, mientras que `quijote.txt` y `.gitignore` siguen ahí. En VS Code, la carpeta `datos_privados` se ve en gris.
+6. Guarda y vuelve a GitHub Desktop: **la entrevista ha desaparecido** de *Changes*, mientras que `quijote.txt` y `.gitignore` siguen ahí. Revisa la lista antes de hacer commit. No subas archivos arrastrándolos a la web de GitHub: esa vía no aplica el `.gitignore` de tu copia local.
 7. Haz commit con el mensaje `Organizo carpetas y añado .gitignore` y sincroniza.
 8. Abre tu repositorio en la web de GitHub y comprueba qué se ve y qué no.
 

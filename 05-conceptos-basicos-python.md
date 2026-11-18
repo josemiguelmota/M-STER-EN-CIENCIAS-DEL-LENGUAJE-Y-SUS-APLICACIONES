@@ -2,7 +2,7 @@
 
 **Qué vamos a hacer.** Todavía no vas a escribir programas. El objetivo es que, cuando veas un código de ejemplo en clase, sepas qué hace cada línea. Usaremos el método **predice, ejecuta, explica**: antes de ejecutar cada celda, escribe en una celda de texto qué crees que pasará; después ejecútala y, si te equivocaste, pide a Copilot o a Gemini que te explique por qué.
 
-Crea un cuaderno nuevo `cuadernos/conceptos_basicos.ipynb` (en VS Code: `Ctrl+Shift+P` › *Create: New Jupyter Notebook*, y guárdalo en `cuadernos`). Puedes usar el kernel de Colab o el local: aquí no leemos archivos. Copia cada ejemplo en una celda de código.
+Crea un cuaderno nuevo en VS Code: abre la paleta de comandos (`⌘⇧P` en macOS, `Ctrl+Shift+P` en Windows y Linux), elige *Create: New Jupyter Notebook* y guárdalo como `cuadernos/conceptos_basicos.ipynb` dentro de `laboratorio-textos`. Selecciona el kernel de Colab como en el [tema 4](04-colab-en-vscode.md). Si usas el navegador, crea allí `conceptos_basicos.ipynb` y descárgalo al terminar. Este cuaderno no necesita archivos de datos. Copia cada ejemplo en una celda de código.
 
 ## 5.1 Comentarios y `print`
 
@@ -96,7 +96,7 @@ print(categorias)
 
 ## 5.8 Todo junto: contar palabras
 
-Este ejemplo combina variables, métodos, un bucle, una condición y un diccionario. Es la idea que había detrás del programa de frecuencias de la sesión 1.
+Este ejemplo combina variables, métodos, un bucle, una condición y un diccionario. El resultado es una tabla de frecuencias en forma de diccionario: cada palabra tiene asociado el número de veces que aparece.
 
 ```python
 texto = "el gato y el perro y el ratón"
@@ -109,9 +109,9 @@ for palabra in texto.split():
 print(frecuencias)
 ```
 
-**Predice:** ¿qué número tendrá `"el"`? Después, explica en una celda de texto, con tus palabras, qué hace cada línea.
+**Predice:** ¿qué número tendrá `"el"`? Después, explica en una celda de texto qué hace cada línea. Prueba también con `"El gato, y el perro"`: `split()` separa por espacios en blanco, pero no elimina comas ni convierte a minúsculas. Restablece el texto original antes de seguir al tema 6 para poder comparar ambos recuentos.
 
-Cuando termines: *Borrar todas las salidas*, guarda, haz commit con el mensaje `Conceptos básicos de Python` y sincroniza.
+Cuando termines, ejecuta las celdas de arriba abajo, usa *Borrar todas las salidas*, guarda y, si usas Colab en el navegador, descarga la copia a `cuadernos`. Haz commit con el mensaje `Conceptos básicos de Python` y sincroniza. En el siguiente tema añadirás las pruebas de bibliotecas a este mismo cuaderno.
 
 ## Puntos de comprobación
 
