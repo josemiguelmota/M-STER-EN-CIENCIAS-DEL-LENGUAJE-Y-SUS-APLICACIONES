@@ -8,6 +8,7 @@ Antes de irte, abre tu repositorio privado `laboratorio-textos` en GitHub. Compr
 - [ ] He ejecutado el primer cuaderno en VS Code con Colab o en el navegador si la extensión no está disponible. Sé por qué un kernel remoto no ve mis archivos locales.
 - [ ] En `cuadernos/conceptos_basicos.ipynb` están mis predicciones y el recuento manual del tema 5.
 - [ ] En ese mismo cuaderno, `Counter` y el recuento manual coinciden, y la tabla muestra `el` con frecuencia `3`.
+- [ ] En el [cuaderno de lectura](ejercicios-lectura-python.ipynb) he explicado qué recibe y qué devuelve una función, y he probado un cambio propio antes de pedir ayuda a Copilot.
 
 ## Problemas frecuentes
 

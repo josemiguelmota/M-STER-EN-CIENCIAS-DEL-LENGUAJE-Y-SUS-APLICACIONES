@@ -2,7 +2,7 @@
 
 Introducción a la programación para lingüistas · Máster en Ciencias del Lenguaje y sus Aplicaciones · Universidad de Cádiz
 
-En esta sesión crearás un repositorio propio llamado `laboratorio-textos`. Esta guía es el material de clase: no tienes que clonarla ni traer un proyecto anterior. Al terminar tendrás un fragmento de dominio público, dos cuadernos escritos por ti y un primer análisis de frecuencias.
+En esta sesión crearás un repositorio propio llamado `laboratorio-textos`. Esta guía es el material de clase: no tienes que clonarla ni traer un proyecto anterior. Al terminar tendrás un fragmento de dominio público, dos cuadernos escritos por ti y un primer análisis de frecuencias. También practicarás con un cuaderno de lectura de código incluido en los materiales.
 
 1. **Crear y organizar el proyecto**: estrenar un repositorio en GitHub Desktop, abrirlo en VS Code y usar `.gitignore` para excluir archivos locales del seguimiento de Git.
 2. **Cuadernos de Google Colab**: qué son y cómo se usan en el navegador.
@@ -10,6 +10,8 @@ En esta sesión crearás un repositorio propio llamado `laboratorio-textos`. Est
 4. **Conceptos básicos de Python**: entender qué hace cada línea de un recuento de palabras y comparar ese recuento con una versión que usa bibliotecas.
 
 **Regla de oro:** hoy trabajamos solo con datos ficticios o de dominio público. Nunca subas ni pegues datos reales de personas en Colab, Copilot o Gemini: también es sacarlos de tu ordenador.
+
+**Copilot como apoyo, no como sustituto.** Primero predice, ejecuta, explica y modifica el código por tu cuenta. Escribe comentarios junto a cada función o método nuevo para explicar qué hace. Si te atascas después de probar, pide a Copilot en VS Code una pista concreta, no una reescritura.
 
 ## Temas
 
@@ -21,6 +23,7 @@ En esta sesión crearás un repositorio propio llamado `laboratorio-textos`. Est
 | Descanso | 15 min |
 | [4. Colab dentro de VS Code](04-colab-en-vscode.md) | 45 min |
 | [5. Conceptos básicos de Python](05-conceptos-basicos-python.md) | 50 min |
+| [Cuaderno de lectura y modificación de código](ejercicios-lectura-python.ipynb) | Práctica del tema 5, en clase o en casa |
 | [6. Bibliotecas](06-bibliotecas.md) | 20 min |
 | [Comprobación final y problemas frecuentes](08-comprobacion-y-problemas.md) | 15 min |
 | [Ampliaciones para quien termine antes](07-ampliaciones.md) | — |

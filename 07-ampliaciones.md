@@ -15,8 +15,12 @@ from collections import Counter
 from pathlib import Path
 import re
 
+# Path() señala el archivo de la sesión; read_text() lee su contenido en UTF-8.
 texto_quijote = Path("/content/quijote.txt").read_text(encoding="utf-8")
+# lower() devuelve el texto en minúsculas; findall() devuelve las coincidencias del patrón.
 tokens_quijote = re.findall(r"[^\W\d_]+", texto_quijote.lower())
+# Counter() cuenta las formas y most_common(5) selecciona las cinco más frecuentes.
+# print() muestra los pares de forma y frecuencia.
 print(Counter(tokens_quijote).most_common(5))
 ```
 
@@ -26,7 +30,7 @@ Compara el resultado con `texto_quijote.split()`: ¿qué les pasa a las mayúscu
 
 ## C. Explicar el recuento sin memorizarlo
 
-Pide a Copilot o Gemini tres preguntas sobre el ejemplo 5.8, o prepáralas con otra persona. Usa únicamente el ejemplo ficticio de la guía. No necesitas una Gema configurada anteriormente.
+Explica primero el ejemplo 5.8 sin asistentes. Después, prepara tres preguntas con otra persona o pide a Copilot en VS Code que te haga preguntas sobre el ejemplo ficticio, sin darte las respuestas.
 
 - [ ] Puedo contestar qué ocurre con una palabra nueva, una repetida y un texto vacío.
 

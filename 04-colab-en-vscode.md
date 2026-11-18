@@ -21,7 +21,9 @@ El concepto clave es el **kernel**: el «motor» que ejecuta las celdas. En VS C
 
 ```python
 import os
+# getcwd() devuelve el directorio de trabajo; print() lo muestra en la salida.
 print(os.getcwd())
+# listdir() lista los archivos y carpetas que el kernel ve en ese directorio.
 print(os.listdir())
 ```
 
@@ -32,16 +34,29 @@ print(os.listdir())
 ```python
 from pathlib import Path
 
+# Path() representa una ruta dentro del entorno donde se ejecuta Python.
 ruta = Path("datos/quijote.txt")
+# is_file() comprueba si la ruta apunta a un archivo; si no, probamos desde cuadernos.
 if not ruta.is_file():
 	ruta = Path("../datos/quijote.txt")
+# print() muestra el resultado de la comprobación de la ruta final.
 print(ruta.is_file())
 ```
 
 En una sesión nueva de Colab verás `False`: guardar un cuaderno en el repositorio no envía al kernel los demás archivos del proyecto.
 
-7. **Opcional, si tienes Python local.** Elige *Seleccionar kernel › Python Environments*, selecciona tu intérprete y acepta instalar `ipykernel` si se solicita. Ejecuta las dos celdas de diagnóstico: si el directorio de trabajo es la raíz o `cuadernos`, la prueba mostrará `True`. En ese caso puedes leer el fragmento público con `print(ruta.read_text(encoding="utf-8"))`.
-8. **Las salidas viajan dentro del cuaderno.** Con cualquiera de los kernels, crea una celda con `print("Marca de prueba ficticia")`, ejecútala y guarda. Sin hacer commit, busca la marca en *Changes* de GitHub Desktop: puede aparecer tanto en el código como en la salida. `.gitignore` no oculta el contenido de un cuaderno seguido por Git.
+7. **Opcional, si tienes Python local.** Elige *Seleccionar kernel › Python Environments*, selecciona tu intérprete y acepta instalar `ipykernel` si se solicita. Ejecuta las dos celdas de diagnóstico: si el directorio de trabajo es la raíz o `cuadernos`, la prueba mostrará `True`. En ese caso puedes leer el fragmento público:
+
+	```python
+	# read_text() lee el archivo como texto UTF-8 y print() lo muestra.
+	print(ruta.read_text(encoding="utf-8"))
+	```
+8. **Las salidas viajan dentro del cuaderno.** Con cualquiera de los kernels, crea esta celda, ejecútala y guarda. Sin hacer commit, busca la marca en *Changes* de GitHub Desktop: puede aparecer tanto en el código como en la salida. `.gitignore` no oculta el contenido de un cuaderno seguido por Git.
+
+	```python
+	# print() deja una marca ficticia en la salida para revisar qué se guarda.
+	print("Marca de prueba ficticia")
+	```
 9. Pulsa *Borrar todas las salidas* (*Clear All Outputs*), elimina las celdas temporales de los pasos 6 a 8 y guarda. Conserva la celda que usa `os`. Revisa en *Changes* que no quede la marca, haz commit con el mensaje `Pruebo Colab en VS Code` y sincroniza.
 
 Si no puedes conectar la extensión, continúa los temas 5 y 6 en Colab desde el navegador y descarga el cuaderno siguiendo el tema 3.

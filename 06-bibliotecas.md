@@ -44,8 +44,12 @@ Compara con el [ejemplo 5.8](05-conceptos-basicos-python.md#58-todo-junto-contar
 ```python
 from collections import Counter
 texto = "el gato y el perro y el ratón"
+# split() separa las formas; Counter() cuenta cuántas veces aparece cada una.
 frecuencias_counter = Counter(texto.split())
+# most_common(2) devuelve las dos formas más frecuentes con sus recuentos.
+# print() muestra los pares de forma y frecuencia.
 print(frecuencias_counter.most_common(2))
+# print() muestra también si el resultado coincide con el recuento manual.
 print(frecuencias_counter == frecuencias)
 ```
 
@@ -56,18 +60,22 @@ print(frecuencias_counter == frecuencias)
 Con el kernel que estés usando, ejecuta:
 
 ```python
+# Importamos pandas con el alias pd para construir la tabla.
 import pandas as pd
 ```
 
 Colab suele traer `pandas`. Si aparece `ModuleNotFoundError`, añade antes del `import` una celda con esta instrucción y ejecútala:
 
 ```python
+# %pip instala pandas en el entorno que ejecuta este cuaderno.
 %pip install pandas
 ```
 
 Vuelve a ejecutar el `import` y después muestra las frecuencias como tabla:
 
 ```python
+# most_common() devuelve todos los pares ordenados por frecuencia.
+# DataFrame() convierte los pares en una tabla con las dos columnas indicadas.
 tabla = pd.DataFrame(frecuencias_counter.most_common(), columns=["palabra", "frecuencia"])
 tabla
 ```

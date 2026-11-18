@@ -1,15 +1,15 @@
 # 5. Conceptos básicos de Python: entender el código
 
-**Qué vamos a hacer.** Todavía no vas a escribir programas. El objetivo es que, cuando veas un código de ejemplo en clase, sepas qué hace cada línea. Usaremos el método **predice, ejecuta, explica**: antes de ejecutar cada celda, escribe en una celda de texto qué crees que pasará; después ejecútala y, si te equivocaste, pide a Copilot o a Gemini que te explique por qué.
+**Qué vamos a hacer.** Aprenderás a leer código de Python y a modificarlo sin depender de Copilot. Antes de ejecutar una celda, escribe qué crees que hace y qué resultado esperas. Ejecútala, compara el resultado y prueba un cambio pequeño. Si no entiendes una diferencia, localiza la línea y prueba con un ejemplo más corto. Solo después, si sigues atascado, pide a Copilot en VS Code una pista sobre esa línea, no una solución completa.
 
 Crea un cuaderno nuevo en VS Code: abre la paleta de comandos (`⌘⇧P` en macOS, `Ctrl+Shift+P` en Windows y Linux), elige *Create: New Jupyter Notebook* y guárdalo como `cuadernos/conceptos_basicos.ipynb` dentro de `laboratorio-textos`. Selecciona el kernel de Colab como en el [tema 4](04-colab-en-vscode.md). Si usas el navegador, crea allí `conceptos_basicos.ipynb` y descárgalo al terminar. Este cuaderno no necesita archivos de datos. Copia cada ejemplo en una celda de código.
 
 ## 5.1 Comentarios y `print`
 
-Lo que va detrás de `#` es un comentario: Python lo ignora y sirve para explicar el código. `print()` muestra algo en pantalla.
+Fuera de un texto entre comillas, `#` marca el comienzo de un comentario: Python ignora lo que queda de esa línea. En este curso, acompaña cada función o método nuevo de un comentario que diga qué hace en ese ejemplo. Si defines una función, indica qué recibe y qué devuelve o qué efecto tiene. Cuando cambies el código, revisa también el comentario.
 
 ```python
-# Esto es un comentario: Python no lo ejecuta
+# print() muestra un saludo en la salida de la celda.
 print("Hola, lingüística")
 ```
 
@@ -22,6 +22,7 @@ palabra = "morfologia"   # str: texto, siempre entre comillas
 num_palabras = 1500      # int: número entero
 ttr = 0.45               # float: número decimal (con punto)
 es_verbo = False         # bool: verdadero (True) o falso (False)
+# type() identifica el tipo de cada valor; print() muestra los cuatro tipos.
 print(type(palabra), type(num_palabras), type(ttr), type(es_verbo))
 ```
 
@@ -33,8 +34,11 @@ Una **función** hace una tarea con lo que le das entre paréntesis: `len()` cue
 
 ```python
 oracion = "La lingüística es fascinante"
+# len() cuenta los caracteres; print() muestra cada resultado de la prueba.
 print(len(oracion))
+# upper() devuelve una copia del texto en mayúsculas.
 print(oracion.upper())
+# split() separa el texto por espacios en blanco y devuelve una lista.
 print(oracion.split())
 ```
 
@@ -46,6 +50,7 @@ Permiten hacer algo solo si se cumple una condición. Las líneas que dependen d
 
 ```python
 palabra = "rápidamente"
+# endswith() comprueba el sufijo; print() muestra la hipótesis de la rama elegida.
 if palabra.endswith("mente"):
     print(palabra, "es probablemente un adverbio")
 elif palabra.endswith("ar"):
@@ -62,10 +67,13 @@ Una **lista** guarda varios elementos en orden, entre corchetes. Se accede a cad
 
 ```python
 tokens = ["La", "lingüística", "computacional", "es", "útil"]
+# print() muestra el primer y el último token, y len() cuenta todos los tokens.
 print(tokens[0])
 print(tokens[-1])
 print(len(tokens))
+# append() añade un elemento al final de la misma lista.
 tokens.append(".")
+# print() muestra la lista después de añadir el punto.
 print(tokens)
 ```
 
@@ -78,6 +86,7 @@ Repite las líneas sangradas una vez por cada elemento de la lista.
 ```python
 tokens = ["La", "lingüística", "computacional", "es", "útil"]
 for token in tokens:
+    # len() mide cada token; print() muestra el token junto con su longitud.
     print(token, len(token))
 ```
 
@@ -89,6 +98,7 @@ Un **diccionario** guarda pares **clave : valor**, entre llaves. No se busca por
 
 ```python
 categorias = {"casa": "sustantivo", "correr": "verbo", "bonito": "adjetivo"}
+# print() muestra primero la categoría de una palabra y luego el diccionario actualizado.
 print(categorias["casa"])
 categorias["rápido"] = "adjetivo"
 print(categorias)
@@ -101,11 +111,13 @@ Este ejemplo combina variables, métodos, un bucle, una condición y un dicciona
 ```python
 texto = "el gato y el perro y el ratón"
 frecuencias = {}
+# split() separa las formas para recorrerlas de una en una.
 for palabra in texto.split():
     if palabra not in frecuencias:
         frecuencias[palabra] = 1
     else:
         frecuencias[palabra] = frecuencias[palabra] + 1
+# print() muestra el recuento final de cada forma.
 print(frecuencias)
 ```
 
@@ -113,12 +125,17 @@ print(frecuencias)
 
 Cuando termines, ejecuta las celdas de arriba abajo, usa *Borrar todas las salidas*, guarda y, si usas Colab en el navegador, descarga la copia a `cuadernos`. Haz commit con el mensaje `Conceptos básicos de Python` y sincroniza. En el siguiente tema añadirás las pruebas de bibliotecas a este mismo cuaderno.
 
+## Práctica de lectura de código
+
+Descarga el [cuaderno de ejercicios de lectura](ejercicios-lectura-python.ipynb) desde los materiales del curso. Puedes trabajar en una copia dentro de `cuadernos/` de tu propio repositorio o abrirla en Colab desde el navegador. Haz la primera pasada sin Copilot: escribe tus predicciones, ejecuta una celda cada vez e intenta hacer y explicar un cambio por ejercicio. Consulta las soluciones al final, después de haber probado tus cambios.
+
 ## Puntos de comprobación
 
 - [ ] Mi cuaderno tiene una celda de texto con mi predicción antes de cada ejemplo.
 - [ ] Puedo explicar en una frase qué es una variable, una lista, un `for`, un `if` y un diccionario.
 - [ ] He modificado al menos un ejemplo con palabras mías y el resultado era el que esperaba.
 - [ ] Sé explicar línea a línea el ejemplo 5.8.
+- [ ] Puedo cambiar un ejemplo, predecir el efecto y actualizar su comentario sin pedir a Copilot que lo reescriba.
 - [ ] `cuadernos/conceptos_basicos.ipynb` está en GitHub.
 
 ---

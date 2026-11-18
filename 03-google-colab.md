@@ -13,15 +13,22 @@
 
 1. Entra en [colab.research.google.com](https://colab.research.google.com) con tu cuenta de Google y pulsa *Nuevo cuaderno*. No necesitas importar archivos ni abrir un repositorio en Colab.
 2. Haz clic en el nombre (arriba a la izquierda) y cámbialo a `primer_cuaderno.ipynb`.
-3. En la primera celda de código escribe `print("Hola, lingüística")` y ejecútala. La primera vez tarda unos segundos: Colab te está asignando un ordenador.
+3. En la primera celda de código escribe y ejecuta estas dos líneas. La primera ejecución puede tardar unos segundos: Colab está preparando el entorno.
+
+	```python
+	# print() muestra un saludo debajo de la celda.
+	print("Hola, lingüística")
+	```
 4. Pulsa *+ Texto* y escribe en Markdown un título (`# Mi primer cuaderno`) y una frase que explique para qué es.
 5. Pulsa *+ Código* y crea dos celdas:
 
 ```python
+# Guardamos la frase para usarla en la siguiente celda.
 frase = "La lingüística computacional es útil"
 ```
 
 ```python
+# len() cuenta los caracteres de la frase, incluidos los espacios.
 len(frase)
 ```
 
